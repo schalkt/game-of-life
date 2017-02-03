@@ -39,6 +39,17 @@ class Grid
     }
 
     /**
+     * Calculate the grid dimension
+     */
+    public function calcDimension()
+    {
+
+        $this->width = count($this->cells[0]);
+        $this->height = count($this->cells);
+
+    }
+
+    /**
      * Generate the cells
      *
      * @param $seed
@@ -61,24 +72,7 @@ class Grid
         }
 
         return $this;
-    }
 
-    /**
-     * Count live cells
-     * @return int
-     */
-    public function countLiveCells()
-    {
-        $count = 0;
-        foreach ($this->cells as $row) {
-            foreach ($row as $cell) {
-                if ($cell) {
-                    $count++;
-                }
-            }
-        }
-
-        return $count;
     }
 
 }

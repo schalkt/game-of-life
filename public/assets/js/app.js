@@ -35,6 +35,11 @@ var App;
             this.step++;
             this.load();
         };
+        AppController.prototype.randomize = function () {
+            this.playing = false;
+            this.data = null;
+            this.load();
+        };
         // editor cell toggle
         AppController.prototype.toggle = function (x, y) {
             if (!this.edit) {

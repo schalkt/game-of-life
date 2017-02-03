@@ -38,21 +38,20 @@ class Game
         $this->options = array_replace(self::$defaults, (array)$options);
         $this->grid = new Grid($this->options['width'], $this->options['height']);
 
-        if (!empty($this->options['lif'])) {
+        if (!empty($this->options['import'])) {
+
+            $this->importJSON($this->options['import']);
+
+        } elseif (!empty($this->options['lif'])) {
 
             $this->loadLif($this->options['lif']);
 
         } else {
-            if (!empty($this->options['import'])) {
 
-                $this->importJSON($this->options['import']);
+            $this->grid->generate($this->options['seed'], $this->options['density']);
 
-            } else {
-
-                $this->grid->generate($this->options['seed'], $this->options['density']);
-
-            }
         }
+
 
         if (!empty($this->options['step'])) {
             for ($i = 0; $i <= $this->options['step']; $i++) {
@@ -180,7 +179,22 @@ class Game
     {
 
         $this->grid->cells = json_decode($json);
+        $this->grid->calcDimension();
 
     }
+
+    /**
+     * Load lif file
+     * @param $filename
+     */
+    private function loadLif($filename)
+    {
+
+        $loader = new Loader($this->grid);
+        $this->grid->cells = $loader->loadLif($filename);
+        $this->grid->calcDimension();
+
+    }
+
 
 }

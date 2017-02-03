@@ -55,6 +55,14 @@ module App {
 
         }
 
+        public randomize() {
+
+            this.playing = false;
+            this.data = null;
+            this.load();
+
+        }
+
         // editor cell toggle
         public toggle(x, y) {
 

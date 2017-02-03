@@ -15,14 +15,15 @@
                placeholder="height"/>
     </div>
 
-
     <div class="form-group">
-        <button class="btn btn-warning" type="button" name="nextStep" data-ng-click="app.play()">Play</button>
-        <button class="btn btn-default" type="button" name="nextStep" data-ng-click="app.stop()">Stop</button>
+        <button class="btn btn-warning" type="button" name="play" data-ng-click="app.play()">Play</button>
+        <button class="btn btn-default" type="button" name="stop" data-ng-click="app.stop()">Stop</button>
         <button class="btn btn-default" type="button" name="nextStep" data-ng-click="app.nextStep()">Next step
         </button>
         <button class="btn btn-primary" type="button" name="edit" data-ng-click="app.edit = !app.edit">Editor
             (on/off)
+        </button>
+        <button class="btn btn-danger" type="button" name="randomize" data-ng-click="app.randomize()">Randomize
         </button>
     </div>
 
