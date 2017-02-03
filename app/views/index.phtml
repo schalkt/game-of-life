@@ -1,0 +1,38 @@
+<form class="form form-horizontal">
+
+    <div class="form-group">
+        <label>step</label>
+        <input data-ng-disabled="true" class="form-control" name="step" data-ng-model="app.step"
+               placeholder="step"/>
+    </div>
+    <div class="form-group">
+        <label>width</label>
+        <input type="number" class="form-control" name="width" data-ng-model="app.width" placeholder="width"/>
+    </div>
+    <div class="form-group">
+        <label>height</label>
+        <input type="number" class="form-control" name="height" data-ng-model="app.height"
+               placeholder="height"/>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-warning" type="button" name="play" data-ng-click="app.play()">Play</button>
+        <button class="btn btn-default" type="button" name="stop" data-ng-click="app.stop()">Stop</button>
+        <button class="btn btn-default" type="button" name="nextStep" data-ng-click="app.nextStep()">Next step
+        </button>
+        <button class="btn btn-primary" type="button" name="edit" data-ng-click="app.edit = !app.edit">Editor
+            (on/off)
+        </button>
+        <button class="btn btn-danger" type="button" name="randomize" data-ng-click="app.randomize()">Randomize
+        </button>
+    </div>
+
+</form>
+
+
+<div class="grid" data-ng-class="{edit : app.edit }">
+    <div data-ng-if="y < app.height" data-ng-repeat="(y, rows) in app.data track by $index">
+        <div data-ng-if="x < app.width" data-ng-click="app.toggle(y,x)" class="cell" data-ng-class="{active : cell}"
+             data-ng-repeat="(x, cell) in rows track by $index"></div>
+    </div>
+</div>

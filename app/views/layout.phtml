@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App" data-ng-controller="AppController as app">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
+    <script type="text/javascript" src="/assets/vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="/assets/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <h1>Game of Life</h1>
+    </div>
+
+    <?php echo $yield ?>
+</div>
+
+<script type="text/javascript">
+
+    var config = angular.module("App", []);
+
+    config.provider("AppConfig", function () {
+
+        var config = {
+            api_url: '/api'
+        };
+
+        this.$get = function () {
+            return config;
+        }
+
+    });
+
+</script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+
+</body>
+</html>
