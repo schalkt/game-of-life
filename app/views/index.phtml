@@ -1,0 +1,19 @@
+<form class="form form-horizontal">
+
+    <button class="btn btn-default" type="button" name="nextStep" data-ng-click="app.play()">Play</button>
+    <button class="btn btn-default" type="button" name="nextStep" data-ng-click="app.stop()">Stop</button>
+
+    <button class="btn btn-default" type="button" name="nextStep" data-ng-click="app.prevStep()">Prev step</button>
+    <button class="btn btn-default" type="button" name="nextStep" data-ng-click="app.nextStep()">Next step</button>
+
+    <input class="form-control" name="step" data-ng-model="app.step"/>
+
+</form>
+
+<pre>
+<div data-ng-repeat="rows in app.data track by $index">
+    <span data-ng-repeat="cell in rows track by $index">{{ cell ? 'O' : ''}} </span>
+</div>
+</pre>
+
+<canvas id="golCanvas" style="width:100%;height: 300px;"></canvas>

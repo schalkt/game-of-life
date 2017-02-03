@@ -2,8 +2,8 @@
 
 return array(
     'width' => 80,
-    'height' => 25,
+    'height' => 20,
     'seed' => 1,
-    'density' => 7,
+    'density' => 1,
     'lif' => null,
 );

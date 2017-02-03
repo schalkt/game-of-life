@@ -53,7 +53,7 @@ class Grid
         for ($x = 0; $x < $this->width; $x++) {
             for ($y = 0; $y < $this->height; $y++) {
                 if ($seed) {
-                    $this->cells[$y][$x] = mt_rand(0, $density) === 0;
+                    $this->cells[$y][$x] = (mt_rand(0, $density) === 0);
                 } else {
                     $this->cells[$y][$x] = 0;
                 }

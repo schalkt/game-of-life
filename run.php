@@ -10,6 +10,13 @@ if (PHP_SAPI != 'cli') {
     die('CLI error' . PHP_EOL);
 }
 
+// for debug
+function xd($data)
+{
+    print_r($data);
+    die();
+}
+
 // get cli arguments and convert to url path
 $argv = $GLOBALS['argv'];
 array_shift($GLOBALS['argv']);

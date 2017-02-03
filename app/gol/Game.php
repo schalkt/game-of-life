@@ -25,6 +25,7 @@ class Game
         'seed' => 1,
         'density' => 7,
         'lif' => null,
+        'import' => null,
     ];
 
     /**
@@ -42,9 +43,15 @@ class Game
             $this->loadLif($this->options['lif']);
 
         } else {
+            if (!empty($this->options['import'])) {
 
-            $this->grid->generate($this->options['seed'], $this->options['density']);
+                $this->importJSON($this->options['import']);
 
+            } else {
+
+                $this->grid->generate($this->options['seed'], $this->options['density']);
+
+            }
         }
 
         if (!empty($this->options['step'])) {
@@ -138,14 +145,17 @@ class Game
     public function render()
     {
 
+        $output = '';
         $cli = PHP_SAPI == 'cli';
 
         foreach ($this->grid->cells as $y => $row) {
             foreach ($row as $x => $cell) {
-                echo($cell ? 'O' : '+');
+                $output .= ($cell ? 'O' : '+');
             }
-            echo $cli ? PHP_EOL : '<br />';
+            $output .= $cli ? PHP_EOL : '<br />';
         }
+
+        return $output;
 
     }
 
@@ -154,6 +164,13 @@ class Game
     {
 
         return json_encode($this->grid->cells);
+
+    }
+
+    public function importJSON($json)
+    {
+
+        $this->grid->cells = json_decode($json);
 
     }
 
