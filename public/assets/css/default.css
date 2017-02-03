@@ -1,6 +1,22 @@
-pre {
 
-    font-size: 8px;
-    line-height: 0.5
+.cell {
+    margin: 0;
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    display: table-cell;
+}
+
+.cell.active {
+    background-color: black;
+}
+
+.grid {
+
+}
+
+.grid.edit .cell {
+
+    border: 1px solid black;
 
 }

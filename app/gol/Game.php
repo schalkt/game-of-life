@@ -159,7 +159,11 @@ class Game
 
     }
 
-
+    /**
+     * Export grid to JSON
+     *
+     * @return string
+     */
     public function exportJSON()
     {
 
@@ -167,15 +171,15 @@ class Game
 
     }
 
+    /**
+     * Import grid from json
+     *
+     * @param $json
+     */
     public function importJSON($json)
     {
 
         $this->grid->cells = json_decode($json);
-
-    }
-
-    public function exportLIF()
-    {
 
     }
 

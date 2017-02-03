@@ -63,6 +63,8 @@ $app->group('/api', function () use ($app) {
 
         $options = array_replace($app->config('game'), [
             'step' => $step,
+            'seed' => rand(1, 2017),
+            'density' => rand(4, 7),
             'import' => $app->request->getBody(),
         ]);
 

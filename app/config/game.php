@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    'width' => 80,
-    'height' => 20,
+    'width' => 128,
+    'height' => 64,
     'seed' => 1,
     'density' => 1,
     'lif' => null,
