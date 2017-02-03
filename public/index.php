@@ -3,6 +3,7 @@
 namespace App;
 
 define('PATH_APP', dirname(__DIR__));
+
 require_once(PATH_APP . '/vendor/autoload.php');
 $config = require(PATH_APP . '/app/config/app.php');
 $app = new \Slim\Slim($config);

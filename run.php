@@ -3,7 +3,8 @@
 
 namespace App;
 
-require __DIR__ . '/vendor/autoload.php';
+define('PATH_APP', __DIR__);
+require PATH_APP . '/vendor/autoload.php';
 
 if (PHP_SAPI != 'cli') {
     die('CLI error' . PHP_EOL);

@@ -18,8 +18,17 @@
   "type": "project",
   "require": {
     "php": "5.6.*",
-    "slim/slim": "2.6.*"
+    "slim/slim": "2.6.*",
+    "petebrowne/slim-layout-view": "0.3.*"
   },
   "require-dev": {
+  },
+  "autoload": {
+    "classmap": [
+      "app/controllers"
+    ],
+    "psr-4": {
+      "Gol\\": "app/gol"
+    }
   }
 }

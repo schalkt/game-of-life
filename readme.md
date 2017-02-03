@@ -8,3 +8,6 @@
 
 - Slim Framework
 - composer
+
+## How to run in console
+- `php run.php cli step [step] [seed] [density]`
