@@ -1,5 +1,7 @@
 #Game of Life
 
+R.I.P https://en.wikipedia.org/wiki/John_Horton_Conway 
+
 ## How to install
 
 - `composer install`
